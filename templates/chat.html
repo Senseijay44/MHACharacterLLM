@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with {{ character }}</title>
+    <style>
+        body {
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0;            /* Light text */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .conversation-box {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            border: 1px solid #333;
+            background-color: #1e1e1e;
+            padding: 15px;
+            border-radius: 10px;
+            overflow-y: auto;
+            height: 300px;
+            color: #e0e0e0;
+        }
+
+        .user-message {
+            font-weight: bold;
+            color: #90caf9; /* Light blue for user messages */
+        }
+
+        .response-message {
+            margin-left: 20px;
+            color: #f48fb1; /* Light pink for character responses */
+        }
+
+        form {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #2c2c2c;
+            color: #ffffff;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #3a3a3a;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4a4a4a;
+        }
+
+        .back-button {
+            margin-top: 20px;
+        }
+
+        .centered {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Chat with {{ character }}</h1>
+
+    <div class="conversation-box">
+        {% for entry in conversation %}
+            <div>
+                <p class="user-message">You: {{ entry.user }}</p>
+                <p class="response-message">{{ character }}: {{ entry.response }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <form method="POST">
+        <input type="hidden" name="character" value="{{ character }}">
+        <label for="user_input" class="centered">What do you want to say to {{ character }}?</label>
+        <input type="text" id="user_input" name="user_input" required>
+        <button type="submit">Send</button>
+    </form>
+
+    <!-- Back button -->
+    <form action="/" method="GET" class="back-button">
+        <button type="submit">Back to Character Selection</button>
+    </form>
+
+</body>
+</html>

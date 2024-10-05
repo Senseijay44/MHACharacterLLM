@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Character</title>
+    <style>
+        body {
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0;            /* Light text */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+            margin: 0;
+        }
+
+        h1 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .characters {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            width: 80%;
+            max-width: 1200px;
+        }
+
+        .character {
+            text-align: center;
+        }
+
+        img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover; /* Preserve the aspect ratio of images */
+            border: 2px solid #444;
+            transition: transform 0.2s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05); /* Zoom effect on hover */
+        }
+
+        p {
+            margin-top: 10px;
+            color: #90caf9; /* Light blue text for character names */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- My Hero Academia Logo -->
+    <img src="{{ url_for('static', filename='mha_logo.png') }}" alt="My Hero Academia" class="logo">
+
+    <!-- Title -->
+    <h1>Select Your Character</h1>
+
+    <div class="characters">
+        <!-- List of Class 1-A Characters -->
+        <div class="character">
+            <a href="/chat?character=Midoriya">
+                <img src="{{ url_for('static', filename='midoriya.jpg') }}" alt="Midoriya">
+                <p>Izuku Midoriya</p>
+            </a>
+        </div>
+        <div class="character">
+            <a href="/chat?character=Bakugo">
+                <img src="{{ url_for('static', filename='bakugo.jpg') }}" alt="Bakugo">
+                <p>Katsuki Bakugo</p>
+            </a>
+        </div>
+        <div class="character">
+            <a href="/chat?character=Todoroki">
+                <img src="{{ url_for('static', filename='todoroki.jpg') }}" alt="Todoroki">
+                <p>Shoto Todoroki</p>
+            </a>
+        </div>
+        <div class="character">
+            <a href="/chat?character=Uraraka">
+                <img src="{{ url_for('static', filename='uraraka.jpg') }}" alt="Uraraka">
+                <p>Ochaco Uraraka</p>
+            </a>
+        </div>
+        <div class="character">
+            <a href="/chat?character=Iida">
+                <img src="{{ url_for('static', filename='iida.jpg') }}" alt="Iida">
+                <p>Tenya Iida</p>
+            </a>
+        </div>
+        <div class="character">
+            <a href="/chat?character=Kirishima">
+                <img src="{{ url_for('static', filename='kirishima.jpg') }}" alt="Kirishima">
+                <p>Eijiro Kirishima</p>
+            </a>
+        </div>
+        <div class="character">
+            <a href="/chat?character=Asui">
+                <img src="{{ url_for('static', filename='asui.jpg') }}" alt="Asui">
+                <p>Tsuyu Asui</p>
+            </a>
+        </div>
+        <div class="character">
+            <a href="/chat?character=Ashido">
+                <img src="{{ url_for('static', filename='ashido.jpg') }}" alt="Ashido">
+                <p>Mina Ashido</p>
+            </a>
+        </div>
+        <div class="character">
+            <a href="/chat?character=Tokoyami">
+                <img src="{{ url_for('static', filename='tokoyami.jpg') }}" alt="Tokoyami">
+                <p>Fumikage Tokoyami</p>
+            </a>
+        </div>
+        <div class="character">
+            <a href="/chat?character=Kaminari">
+                <img src="{{ url_for('static', filename='kaminari.jpg') }}" alt="Kaminari">
+                <p>Denki Kaminari</p>
+            </a>
+        </div>
+        <div class="character">
+            <a href="/chat?character=Yaoyorozu">
+                <img src="{{ url_for('static', filename='yaoyorozu.jpg') }}" alt="Yaoyorozu">
+                <p>Momo Yaoyorozu</p>
+            </a>
+        </div>
+        <div class="character">
+            <a href="/chat?character=Jiro">
+                <img src="{{ url_for('static', filename='jiro.jpg') }}" alt="Jiro">
+                <p>Kyoka Jiro</p>
+            </a>
+        </div>
+        <div class="character">
+            <a href="/chat?character=Sero">
+                <img src="{{ url_for('static', filename='sero.jpg') }}" alt="Sero">
+                <p>Hanta Sero</p>
+            </a>
+        </div>
+        <div class="character">
+            <a href="/chat?character=Sato">
+                <img src="{{ url_for('static', filename='sato.jpg') }}" alt="Sato">
+                <p>Rikido Sato</p>
+            </a>
+        </div>
+        <div class="character">
+            <a href="/chat?character=Shoji">
+                <img src="{{ url_for('static', filename='shoji.jpg') }}" alt="Shoji">
+                <p>Mezo Shoji</p>
+            </a>
+        </div>
+        <div class="character">
+            <a href="/chat?character=Hagakure">
+                <img src="{{ url_for('static', filename='hagakure.jpg') }}" alt="Hagakure">
+                <p>Toru Hagakure</p>
+            </a>
+        </div>
+        <div class="character">
+            <a href="/chat?character=Aoyama">
+                <img src="{{ url_for('static', filename='aoyama.jpg') }}" alt="Aoyama">
+                <p>Yuga Aoyama</p>
+            </a>
+        </div>
+        <div class="character">
+            <a href="/chat?character=Mineta">
+                <img src="{{ url_for('static', filename='mineta.jpg') }}" alt="Mineta">
+                <p>Minoru Mineta</p>
+            </a>
+        </div>
+        <div class="character">
+            <a href="/chat?character=Koda">
+                <img src="{{ url_for('static', filename='koda.jpg') }}" alt="Koda">
+                <p>Koji Koda</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
